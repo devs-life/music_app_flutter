@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/utils/konstants.dart';
 
+import 'auth/screens/signUpScreen.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: appThemeData(Brightness.light),
       darkTheme: appThemeData(Brightness.dark),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: SignUpScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

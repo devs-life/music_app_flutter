@@ -91,4 +91,5 @@ Color primaryRedColor = Color(0xFFE50914);
 Color secondaryRedColor = Color(0xFFB81D24);
 Color darkBackgroundColor = Color(0xFF221F1F);
 Color lightBackgroundColor = Color(0xFFF5F5F1);
-const Color pureblack = Color(0xFF2B2A29);
+const Color pureGrey = Color(0xFF2B2A29);
+const Color backgroundBlack = Color(0xFF101010);
