@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/auth/widgets/authOptionButton.dart';
+import 'package:music_app/auth/widgets/authTextField.dart';
 import 'package:music_app/auth/widgets/customBackButton.dart';
+import 'package:music_app/components/gradientButton.dart';
 import 'package:music_app/utils/konstants.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -57,8 +59,29 @@ class SignUpScreen extends StatelessWidget {
           SizedBox(height: size.height * 0.04),
           Text(
             'Name',
-            style: Theme.of(context).textTheme.bodyText1,
+            style:
+                Theme.of(context).textTheme.bodyText2!.copyWith(fontSize: 16),
           ),
+          SizedBox(height: size.height * 0.01),
+          AuthTextField(hintText: 'Enter your name'),
+          SizedBox(height: size.height * 0.03),
+          Text(
+            'Email',
+            style:
+                Theme.of(context).textTheme.bodyText2!.copyWith(fontSize: 16),
+          ),
+          SizedBox(height: size.height * 0.01),
+          AuthTextField(hintText: 'tim@apple.com'),
+          SizedBox(height: size.height * 0.03),
+          Text(
+            'Password',
+            style:
+                Theme.of(context).textTheme.bodyText2!.copyWith(fontSize: 16),
+          ),
+          SizedBox(height: size.height * 0.01),
+          AuthTextField(hintText: 'Pick a strong password'),
+          SizedBox(height: size.height * 0.04),
+          GradientButton(),
         ],
       ),
     );

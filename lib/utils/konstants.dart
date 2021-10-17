@@ -93,3 +93,18 @@ Color darkBackgroundColor = Color(0xFF221F1F);
 Color lightBackgroundColor = Color(0xFFF5F5F1);
 const Color pureGrey = Color(0xFF2B2A29);
 const Color backgroundBlack = Color(0xFF101010);
+
+final textFieldCommonDecoration = InputDecoration(
+  contentPadding: EdgeInsets.all(20),
+  border: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(10),
+    borderSide: BorderSide(color: Colors.blue, width: 2.0),
+  ),
+  enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(10),
+    borderSide: BorderSide(color: pureGrey, width: 2.0),
+  ),
+  filled: true,
+  hintStyle: TextStyle(color: Colors.grey[600]),
+  fillColor: darkBackgroundColor,
+);
