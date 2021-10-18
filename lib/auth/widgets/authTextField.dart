@@ -13,10 +13,11 @@ class AuthTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = Theme.of(context).brightness;
     return Container(
       child: TextField(
         obscureText: isPassword,
-        decoration: textFieldCommonDecoration.copyWith(
+        decoration: textFieldCommonDecoration(brightness).copyWith(
           hintText: hintText,
         ),
       ),

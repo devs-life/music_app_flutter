@@ -6,15 +6,20 @@ class AuthOptionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = Theme.of(context).brightness;
     return Container(
       height: 60,
       child: Icon(
         Icons.face_outlined,
-        color: Colors.white,
+        color: brightness == Brightness.light
+            ? Colors.black.withOpacity(0.5)
+            : Colors.white.withOpacity(0.5),
         size: 22,
       ),
       decoration: BoxDecoration(
-        color: darkBackgroundColor,
+        color: brightness == Brightness.dark
+            ? darkBackgroundColor
+            : lightBackgroundColor,
         border: Border.all(color: pureGrey, width: 2),
         borderRadius: BorderRadius.circular(12),
       ),

@@ -22,10 +22,8 @@ class GradientButton extends StatelessWidget {
       child: Center(
           child: Text(
         'Create Account',
-        style: Theme.of(context)
-            .textTheme
-            .bodyText2!
-            .copyWith(fontWeight: FontWeight.bold, fontSize: 16),
+        style: Theme.of(context).textTheme.bodyText2!.copyWith(
+            fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white),
       )),
     );
   }
