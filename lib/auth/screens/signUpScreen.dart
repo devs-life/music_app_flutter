@@ -3,7 +3,6 @@ import 'package:music_app/auth/widgets/authOptionButton.dart';
 import 'package:music_app/auth/widgets/authTextField.dart';
 import 'package:music_app/auth/widgets/customBackButton.dart';
 import 'package:music_app/components/gradientButton.dart';
-import 'package:music_app/utils/konstants.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -11,7 +10,6 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundBlack,
       body: SafeArea(
         bottom: false,
         child: Container(

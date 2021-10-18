@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-ThemeData appThemeData(Brightness brightness) {
+ThemeData appThemeData(Brightness _brightness) {
   return ThemeData(
       primaryColor: primaryRedColor,
-      backgroundColor: brightness == Brightness.dark
-          ? darkBackgroundColor
+      backgroundColor: _brightness == Brightness.dark
+          ? backgroundBlack
+          : lightBackgroundColor,
+      scaffoldBackgroundColor: _brightness == Brightness.dark
+          ? backgroundBlack
           : lightBackgroundColor,
       appBarTheme: AppBarTheme(
           elevation: 2,
@@ -16,10 +19,10 @@ ThemeData appThemeData(Brightness brightness) {
           primaryVariant: primaryRedColor,
           secondary: secondaryRedColor,
           secondaryVariant: secondaryRedColor,
-          surface: brightness == Brightness.dark
+          surface: _brightness == Brightness.dark
               ? darkBackgroundColor
               : lightBackgroundColor,
-          background: brightness == Brightness.dark
+          background: _brightness == Brightness.dark
               ? darkBackgroundColor
               : lightBackgroundColor,
           error: Colors.red,
@@ -28,35 +31,35 @@ ThemeData appThemeData(Brightness brightness) {
           onSurface: Colors.white,
           onBackground: Colors.white,
           onError: Colors.white,
-          brightness: brightness),
-      brightness: brightness,
+          brightness: _brightness),
+      brightness: _brightness,
       textTheme: TextTheme(
         bodyText1: montserratStyle(
-            size: 18, brightness: brightness, weight: FontWeight.w500),
+            size: 18, brightness: _brightness, weight: FontWeight.w500),
         bodyText2: montserratStyle(
-            size: 14, brightness: brightness, weight: FontWeight.w400),
+            size: 14, brightness: _brightness, weight: FontWeight.w400),
         button: montserratStyle(
-            size: 16, brightness: brightness, weight: FontWeight.w600),
+            size: 16, brightness: _brightness, weight: FontWeight.w600),
         headline1: robotoStyle(
-            size: 48, brightness: brightness, weight: FontWeight.bold),
+            size: 48, brightness: _brightness, weight: FontWeight.bold),
         headline2: robotoStyle(
-            size: 40, brightness: brightness, weight: FontWeight.bold),
+            size: 40, brightness: _brightness, weight: FontWeight.bold),
         headline3: robotoStyle(
-            size: 30, brightness: brightness, weight: FontWeight.w700),
+            size: 30, brightness: _brightness, weight: FontWeight.w700),
         headline4: robotoStyle(
-            size: 24, brightness: brightness, weight: FontWeight.w600),
+            size: 24, brightness: _brightness, weight: FontWeight.w600),
         headline5: robotoStyle(
-            size: 18, brightness: brightness, weight: FontWeight.w500),
+            size: 18, brightness: _brightness, weight: FontWeight.w500),
         headline6: robotoStyle(
-            size: 16, brightness: brightness, weight: FontWeight.w400),
+            size: 16, brightness: _brightness, weight: FontWeight.w400),
         subtitle1: montserratStyle(
-            size: 14, brightness: brightness, weight: FontWeight.w500),
+            size: 14, brightness: _brightness, weight: FontWeight.w500),
         subtitle2: montserratStyle(
-            size: 12, brightness: brightness, weight: FontWeight.w400),
+            size: 12, brightness: _brightness, weight: FontWeight.w400),
         overline: montserratStyle(
-                size: 10, brightness: brightness, weight: FontWeight.w400)
+                size: 10, brightness: _brightness, weight: FontWeight.w400)
             .copyWith(
-          color: brightness == Brightness.dark
+          color: _brightness == Brightness.dark
               ? Colors.white.withOpacity(0.5)
               : Colors.black.withOpacity(0.5),
         ),
@@ -87,14 +90,15 @@ TextStyle robotoStyle(
   );
 }
 
-Color primaryRedColor = Color(0xFFE50914);
-Color secondaryRedColor = Color(0xFFB81D24);
-Color darkBackgroundColor = Color(0xFF221F1F);
-Color lightBackgroundColor = Color(0xFFF5F5F1);
+const Color primaryRedColor = Color(0xFFE50914);
+const Color secondaryRedColor = Color(0xFFB81D24);
+const Color darkBackgroundColor = Color(0xFF221F1F);
+const Color lightBackgroundColor = Color(0xFFF5F5F1);
 const Color pureGrey = Color(0xFF2B2A29);
 const Color backgroundBlack = Color(0xFF101010);
 
-final textFieldCommonDecoration = InputDecoration(
+InputDecoration textFieldCommonDecoration (Brightness _brightness){
+  return InputDecoration(
   contentPadding: EdgeInsets.all(20),
   border: OutlineInputBorder(
     borderRadius: BorderRadius.circular(10),
@@ -106,5 +110,7 @@ final textFieldCommonDecoration = InputDecoration(
   ),
   filled: true,
   hintStyle: TextStyle(color: Colors.grey[600]),
-  fillColor: darkBackgroundColor,
-);
+  fillColor: _brightness == Brightness.dark
+      ? darkBackgroundColor
+      : lightBackgroundColor,
+);}
